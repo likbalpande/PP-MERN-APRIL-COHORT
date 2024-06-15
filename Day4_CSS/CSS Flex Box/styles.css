@@ -1,0 +1,40 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.child{
+    background-color: bisque;
+    padding: 16px;
+    border: 1px solid black;
+}
+
+.parent{
+    height: 100px;
+    width: 100vw;
+    background-color: green;
+
+    display: flex;
+
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    /* align-contents, justify-items */
+
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+.child-2{
+    /* flex-grow: 2; */
+}
+
+.child-1{
+    order: 1;
+    flex-grow: 1;
+}
+
+.child-3{
+    /* flex-basis: 100px; */
+}

@@ -1,0 +1,113 @@
+/* id selector
+#html-article{
+    color: purple;
+    background-color: antiquewhite;
+}
+
+tag selector
+h3{
+    color: brown;
+    background-color: yellow;
+}
+
+class selector
+.un-text{
+    text-decoration: underline;
+    font-weight: 500;
+    background-color: bisque;
+}
+
+.it-text{
+    font-style: italic;
+    text-decoration: none;
+}
+
+.sugar{
+    color: purple;
+}
+
+.hot{
+    background-color: rgba(255, 0, 0, 0.387);
+}
+
+.hot.sugar{
+    font-weight: 600;
+} 
+
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* .parent{
+    font-size: 2em;
+}
+
+.card{
+    padding: 50px;
+    border: 1px solid black;
+    margin: 50px auto;
+
+    font-size: 2em;
+
+    width: 40em;
+} */
+
+/* .btn{
+    display: block;
+    margin: 20px auto;
+    border: none;
+    outline: none;
+
+    padding: 0.33em 0.5em;
+    font-size: 48px;
+    border-radius: 0.33em;
+
+    background-color: rgb(4, 170, 109);
+    color: rgb(255, 255, 255);
+}
+
+.big-btn{
+    font-size: 72px;
+}
+
+.small-btn{
+    font-size: 16px;
+} */
+
+/* html{
+    font-size: 32px;;
+}
+
+.parent{
+    font-size: 32px;
+}
+
+.text{
+    font-size: 2rem;
+} */
+
+/* .card{
+    width: 80%;
+    height: 80%;
+    background-color: aquamarine;
+} */
+
+
+.parent{
+    height: 400px;
+    width: 400px;
+    background-color: beige;
+}
+
+.child{
+    height: 99%;
+    width: 99%;
+    background-color: grey;
+}
+
+
+

@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My website</title>
+        <style>
+            *{
+                padding: 0; 
+                margin: 0;    
+                box-sizing: border-box;
+            }
+            nav{
+                height: 10vh;
+                background-color: azure;
+            }
+            main{
+                padding: 24px;
+                background-color: blanchedalmond;
+            }
+            footer{
+                height: 20vh;
+                background-color: rgb(187, 201, 176);
+            }
+            .card{
+                margin: 24px auto;
+                width: 400px;
+                padding: 16px;
+                background-color: lime;
+            }
+            img{
+                width: 200px;
+                display: block;
+                margin: 12px auto;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <a href="/">Home</a>
+        </nav>
+        <main>
+            <div>#root#</div>
+        </main>
+        <footer></footer>
+    </body>
+</html>

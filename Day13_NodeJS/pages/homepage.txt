@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My website</title>
+        <style>
+            *{
+                padding: 0; 
+                margin: 0;    
+                box-sizing: border-box;
+            }
+            nav{
+                height: 10vh;
+                background-color: azure;
+            }
+            main{
+                height: 70vh;
+                background-color: blanchedalmond;
+            }
+            footer{
+                height: 20vh;
+                background-color: rgb(187, 201, 176);
+            }
+        </style>
+    </head>
+    <body>
+        <nav></nav>
+        <main>
+            <a href="/products">View Products</a>
+        </main>
+        <footer></footer>
+    </body>
+</html>

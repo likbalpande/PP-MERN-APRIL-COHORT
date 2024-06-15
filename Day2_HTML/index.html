@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Practice #day2</title>
+</head>
+<body>
+    <main>
+        <table border="1">
+            <caption>Student Information</caption>
+            <tr>
+                <th>Sr. No.</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Address</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td colspan="2">Likhilesh</td>
+                <td rowspan="2">Nagpur</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Ajay</td>
+                <td>Sing</td>
+            </tr>
+        </table>
+        <img width="200px" height=200px src=https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Sunflower_from_Silesia2.jpg/1200px-Sunflower_from_Silesia2.jpg alt="flower">
+        <form action="/profile.html" method="get">
+                <label for="f-name">First Name:</label>
+                <input id='f-name' type="text" placeholder="Please enter Name" name="user-first-name" autocomplete="off" >
+            <br><br>
+                <label for="f-age">Age:</label>
+                <input id='f-age' type="number" placeholder="Please enter Age" name="user-age" value="18">
+            <br><br>
+                <label>Gender:</label><br>
+                <input id='f-male' type="radio" name="user-gender" value="male" ><label for="f-male">Male</label>
+                <input id='f-female' type="radio" name="user-gender" value="female" checked><label for="f-female">Female</label>
+            <br><br>
+                <label>Hobbies</label><br>
+                <input type="checkbox" name="user-hobby" value="Reading" checked><label>Reading</label>
+                <input type="checkbox" name="user-hobby" value="Walking"><label>Walking</label>
+                <input type="checkbox" name="user-hobby" value="Playing" checked><label>Playing</label>
+                <input type="checkbox" name="user-hobby" value="Driving"><label for="f-d">Driving</label>
+
+                <select name="user-city">
+                    <option value="delhi">Delhi</option>
+                    <option value="jaipur">Jaipur</option>
+                    <option value="pune" selected>Pune</option>
+                    <option value="chennai">Chennai</option>
+                </select>
+                <textarea name="user_information" placeholder="Your info"></textarea>
+            <br><br>
+            <input type="submit">
+            <input type="reset">
+
+                <button type="submit">Submit</button>
+                <button type="reset">Submit</button>
+
+                
+                
+            </form>
+            <br><br>
+            <meter value="0.9"></meter> static
+            <progress value="0.8"></progress> dynamic
+            <br><br>
+        <video height='200px' src="../nature.mp4" controls autoplay muted loop></video>
+        <br><br>
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. &lt; &copy;Likhilesh&nbsp;Balpande &gt; </p>
+        <br><br>
+        <h1>Text Quotations</h1>
+        <p><b>Hello</b> <strong>World</strong></p>
+        <p><em>Hello</em> <i>World</i></p>
+        <p><u>Hello</u> <del>Earth</del><ins>World</ins></p>
+
+        <bdo dir="rtl">I am a boy</bdo>
+
+        <a href="mailto:lik@gmail.com">mail</a>
+        <a href="tel:12087420834">call me</a>
+    </main>
+</body>
+</html>
