@@ -1,45 +1,42 @@
 // console.log('Fetching data...');
 
-// const res = fetch('https://dummyjson.com/products');
+const res = fetch("https://dummyjson.com/products");
 
-// res.then((data)=>{
-//     const obj = data.json();
-    
-//     obj.then((js)=>{
-//         renderUI(js);
-//     })
-//     .catch((err)=>{
-//         console.log("Cannot parse json", err);    
-//     });
-// })
-// .catch((err)=>{
-//     console.log("Error Occurred:", err);
-// });
+res.then((data) => {
+    const obj = data.json();
 
-// function renderUI(data){
-//     const products = data.products;
-//     const firstTitle = products[0].title;
-//     const firstThumb = products[0].thumbnail;
-//     // console.log(firstTitle, firstThumb);
-    
-//     // where should i insert?
-//     const parent = document.getElementById('root');
+    obj.then((js) => {
+        renderUI(js);
+    }).catch((err) => {
+        console.log("Cannot parse json", err);
+    });
+}).catch((err) => {
+    console.log("Error Occurred:", err);
+});
 
-//     // what should i insert?
-//     const title = document.createElement('h4');
-//     title.innerText = firstTitle;
+function renderUI(data) {
+    const products = data.products;
+    const firstTitle = products[0].title;
+    const firstThumb = products[0].thumbnail;
+    // console.log(firstTitle, firstThumb);
 
-//     // how to insert ?
-//     parent.appendChild(title);
+    // where should i insert?
+    const parent = document.getElementById("root");
 
-//     // what should i insert?
-//     const image = document.createElement('img');
-//     image.src = firstThumb;
+    // what should i insert?
+    const title = document.createElement("h4");
+    title.innerText = firstTitle;
 
-//     // how to insert ?
-//     parent.appendChild(image);
-// }
+    // how to insert ?
+    parent.appendChild(title);
 
+    // what should i insert?
+    const image = document.createElement("img");
+    image.src = firstThumb;
+
+    // how to insert ?
+    parent.appendChild(image);
+}
 
 // import validateCart from "./cartTeam.js";
 // import proceedToPayment from "./paymentTeam.js";
@@ -49,8 +46,6 @@
 // pr.then(proceedToPayment)
 // .catch('ahbajkf');
 
-
-
 // const arr = [2, 4, 6];
 
 // const res = arr.map((a)=>{
@@ -59,7 +54,6 @@
 // });
 
 // console.log(res);
-
 
 // const arr = [1, 2, 4, 6, 9];
 
@@ -74,7 +68,6 @@
 
 // console.log(res)
 
-
 // const arr = [11, 21, 41, 32];
 
 // const res = arr.reduce((acc,a,b,c)=>{
@@ -83,7 +76,6 @@
 // }, 1000);
 
 // console.log('RESULT:', res)
-
 
 // const chaiStall = {
 //     name: 'chai ki dukan',
@@ -98,19 +90,18 @@
 // console.log(chaiStall)
 // console.log(juiceStall)
 
-const arr = ['tea', 'coffee', 'milk', 'biscuit'];
+const arr = ["tea", "coffee", "milk", "biscuit"];
 
 const chaiStall = {
-    name: 'chai ki dukan',
+    name: "chai ki dukan",
     menu: arr,
-}
+};
 
-const juiceStall = {...chaiStall};
+const juiceStall = { ...chaiStall };
 
-juiceStall.name = 'juice ki dukan';
-juiceStall.menu[0] = 'apple juice';
-juiceStall.menu[1] = 'banana shake';
+juiceStall.name = "juice ki dukan";
+juiceStall.menu[0] = "apple juice";
+juiceStall.menu[1] = "banana shake";
 
-console.log(chaiStall)
-console.log(juiceStall)
-
+console.log(chaiStall);
+console.log(juiceStall);

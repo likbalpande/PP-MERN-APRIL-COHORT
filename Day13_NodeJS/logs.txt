@@ -178,3 +178,9 @@ Request: /favicon.ico 2024-06-15T11:05:45.066Z
 Request: /products/view?id=20 2024-06-15T11:05:45.198Z 
 Request: /favicon.ico 2024-06-15T11:05:45.229Z 
 Request: /products 2024-06-15T11:19:45.109Z 
+Request: / 2024-06-22T10:21:24.084Z 
+Request: /favicon.ico 2024-06-22T10:21:26.255Z 
+Request: / 2024-06-22T10:21:30.431Z 
+Request: /favicon.ico 2024-06-22T10:21:32.518Z 
+Request: /products 2024-06-22T10:21:39.517Z 
+Request: /favicon.ico 2024-06-22T10:22:18.564Z 
