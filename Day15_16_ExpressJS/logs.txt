@@ -1,0 +1,9 @@
+/products/233 PUT 
+/products GET 
+/products GET 
+/products/1 PATCH 
+/products GET 
+/products GET 
+/products GET 
+/products/view?hello=world PUT 
+/products/233 PUT 
