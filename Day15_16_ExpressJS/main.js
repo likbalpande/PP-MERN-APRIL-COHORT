@@ -1,11 +1,11 @@
 const express = require("express");
 const fsPromises = require("fs/promises");
-
 const PORT = 1400;
 
 const app = express();
-
 app.use(express.json());
+
+//Model ~View~ Controller
 
 app.get("/", (req, res) => {
     res.json({
@@ -105,8 +105,13 @@ app.put("/products/:id", async (req, res) => {
     //     id: productsArray[productIdx].id,
     // };
 
-    body.id = productsArray[productIdx].id;
+    const product = productsArray[productIdx];
+    const prId = product.id;
+    body.id = prId;
     productsArray[productIdx] = body;
+
+    // body.id = productsArray[productIdx].id;
+    // productsArray[productIdx] = body;
 
     await fsPromises.writeFile("./data.json", JSON.stringify(productsArray));
     res.status(200);
@@ -114,6 +119,46 @@ app.put("/products/:id", async (req, res) => {
         status: "success",
         data: {
             product: productsArray[productIdx],
+        },
+    });
+});
+
+app.patch("/products/:id", async (req, res) => {
+    const { id } = req.params;
+    const { body } = req;
+
+    const text = await fsPromises.readFile("./data.json", { encoding: "utf8" });
+
+    let productsArray;
+    try {
+        productsArray = JSON.parse(text);
+    } catch {
+        productsArray = [];
+    }
+
+    const productIdx = productsArray.findIndex((elem) => {
+        if (elem.id == id) {
+            return true;
+        } else return false;
+    });
+
+    if (productIdx === -1) {
+        res.status(400).json({
+            status: "fail",
+            message: "Invalid product id",
+        });
+        return;
+    }
+
+    const product = productsArray[productIdx];
+    const newProduct = { ...product, ...body };
+    productsArray[productIdx] = newProduct;
+    await fsPromises.writeFile("./data.json", JSON.stringify(productsArray));
+    res.status(200);
+    res.json({
+        status: "success",
+        data: {
+            product: newProduct,
         },
     });
 });
