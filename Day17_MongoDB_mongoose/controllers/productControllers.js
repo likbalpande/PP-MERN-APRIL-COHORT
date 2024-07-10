@@ -35,7 +35,7 @@ const validateID = async (req, res, next) => {
 // GET
 const getProducts = async (req, res) => {
     try {
-        const products = await productModel.find({});
+        const products = await productModel.find();
         res.json({
             status: "success",
             data: {
@@ -145,11 +145,64 @@ const deleteProduct = async (req, res) => {
     }
 };
 
+// in query --> price[$lte]=2000
+// backend --> price:{$lte:2000}
+
+// LIST API
+// Advance Query
+const listProducts = async (req, res) => {
+    try {
+        const { q = "", limit = 10, sort = "price", page = 1, fields = "title price", ...rest } = req.query;
+
+        // making query
+        let productsQuery = productModel.find(rest);
+
+        // searching (regular expression : regex)
+        productsQuery = productsQuery.where("title").regex(RegExp(q, "i"));
+
+        // sorting
+        const sortOptions = sort.split("_").join(" ");
+        productsQuery = productsQuery.sort(sortOptions);
+
+        // get the total of results
+        const countDocuments = await productsQuery.clone().countDocuments();
+
+        // pagination
+        productsQuery = productsQuery.skip((page - 1) * limit);
+        productsQuery = productsQuery.limit(limit);
+
+        // limiting the fields
+        const fieldsOptions = fields.split("_").join(" ");
+        productsQuery = productsQuery.select(fieldsOptions);
+
+        // executing the query and bringing the data
+        products = await productsQuery;
+
+        res.json({
+            status: "success",
+            results: products.length,
+            total: countDocuments,
+            data: {
+                products,
+            },
+        });
+    } catch (err) {
+        console.log(err);
+        res.status(500);
+        res.json({
+            status: "fail",
+            message: "Internal Server Error",
+            info: err,
+        });
+    }
+};
+
 module.exports = {
     getProducts,
     createProduct,
     replaceProduct,
     updateProduct,
     deleteProduct,
+    listProducts,
     validateID,
 };

@@ -6,6 +6,7 @@ const {
     updateProduct,
     deleteProduct,
     validateID,
+    listProducts,
 } = require("../controllers/productControllers.js");
 const productRouter = express.Router();
 
@@ -16,5 +17,7 @@ productRouter
     .put(validateID, replaceProduct)
     .patch(validateID, updateProduct)
     .delete(validateID, deleteProduct);
+
+productRouter.route("/products/list").get(listProducts);
 
 module.exports = productRouter;
