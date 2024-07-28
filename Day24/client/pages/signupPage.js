@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignupPage = () => {
     const [email, setEmail] = useState("");
@@ -36,6 +36,7 @@ const SignupPage = () => {
             <input type="email" placeholder="email" onChange={(e) => setEmail(e.target.value)} />
             <input type="password" placeholder="password" onChange={(e) => setPassword(e.target.value)} />
             <button onClick={handleSubmit}>Sign up</button>
+            <Link to="/login">Go to Login Page</Link>
         </div>
     );
 };
